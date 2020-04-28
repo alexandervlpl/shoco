@@ -51,7 +51,7 @@ clean:
 	rm *.o
 
 .PHONY: js
-js: shoco.js
+js: _shoco.js
 
-shoco.js: $(OBJECTS) $(HEADERS) pre.js
-	emcc shoco.c -O3 -o $@ --closure 1 -s EXPORTED_FUNCTIONS="['_shoco_compress', '_shoco_decompress']" --pre-js pre.js
+_shoco.js: $(OBJECTS) $(HEADERS)
+	emcc shoco.c -O2 -o $@ --closure 1 -s EXPORTED_FUNCTIONS="['_shoco_compress', '_shoco_decompress']" -s 'EXTRA_EXPORTED_RUNTIME_METHODS=["ccall", "cwrap"]'

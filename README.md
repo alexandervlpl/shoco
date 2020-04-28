@@ -109,6 +109,10 @@ The compressed string is really a [Uint8Array](https://developer.mozilla.org/en-
 
 `shoco.js` should be usable as a node.js module.
 
+## Node.js
+
+Works with Emscripten 1.39.13, Nodejs v8.10.0. Compile with `make js`.
+
 ## Tools And Other Included Extras
 
 Most of them have been mentioned already, but for the sake of completeness – let’s have a quick overview over what you’ll find in the repo:
