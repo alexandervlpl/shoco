@@ -54,4 +54,4 @@ clean:
 js: _shoco.js
 
 _shoco.js: $(OBJECTS) $(HEADERS)
-	emcc shoco.c -O2 -o $@ --closure 1 -s EXPORTED_FUNCTIONS="['_shoco_compress', '_shoco_decompress']" -s 'EXTRA_EXPORTED_RUNTIME_METHODS=["ccall", "cwrap"]' -s BINARYEN_ASYNC_COMPILATION=0 -s SINGLE_FILE=1
+	emcc shoco.c -O2 -o _shoco.js --closure 1 -s EXPORTED_FUNCTIONS="['_shoco_compress', '_shoco_decompress']" -s 'EXTRA_EXPORTED_RUNTIME_METHODS=["ccall", "cwrap"]' -s BINARYEN_ASYNC_COMPILATION=0 -s SINGLE_FILE=1
