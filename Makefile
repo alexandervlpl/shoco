@@ -13,6 +13,7 @@ all: shoco
 
 shoco: shoco-bin.o $(OBJECTS) $(HEADERS)
 	$(CC) $(LDFLAGS) $(OBJECTS) -s $< -o $@
+	cp shoco python
 
 test_input: test_input.o $(OBJECTS) $(HEADERS)
 	$(CC) $(LDFLAGS) $(OBJECTS) -s $< -o $@
@@ -48,7 +49,9 @@ tests: tests.o $(OBJECTS) $(HEADERS)
 
 .PHONY: clean
 clean:
-	rm -f *.o _shoco.js
+	rm -f *.o shoco
+	rm -f _shoco.js
+	rm -f python/shoco
 
 .PHONY: js
 js: _shoco.js
